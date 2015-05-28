@@ -10,3 +10,6 @@ wordsArray = split2words(sentence)
 # Print result
 for i in wordsArray:
     print(i)
+
+
+print (len(wordsArray))
