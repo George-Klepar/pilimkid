@@ -1,6 +1,12 @@
-a = "Pilim"
-b = "Kid"
 
-c = a + b
+# Sentence splitting to words function
+def split2words (input_string):
+    return input_string.split()
 
-print (c)
+
+sentence = "We Like Code"
+wordsArray = split2words(sentence)
+
+# Print result
+for i in wordsArray:
+    print(i)
