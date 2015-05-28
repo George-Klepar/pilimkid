@@ -11,3 +11,6 @@ wordsArray = split2words(sentence)
 for i in wordsArray:
     print(i)
 
+
+print (len(wordsArray))
+
