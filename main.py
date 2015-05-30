@@ -1,21 +1,31 @@
+# -*- coding: utf-8 -*-
+import re
+import sys
+
 # Sentence to separate words splitting function
-def split2words (input_string):
-    return input_string.split()
+def s2w (input_string):
+    ret = re.sub('\W',' ', input_string).split()
+    return ret
 
 
-sentence = "We Like Code"
-wordsArray = split2words(sentence)
+# Sentence splitting demo with function "s2w"
 
-# Print result
+sentence = "Мы - любим кодить...очень: наприпер 'для примера',как типа этого"
+wordsArray = s2w(sentence)
 
 for i in wordsArray:
     print(i)
 
-# прiвiт дрiже Дiмi, нiжче бiдiм стрiку рiзбiватi на слiва :)
 
-a = input()
-b = a.split('[., ]+')
-print(b)
+# Request to enter sentence to split and write to list
+# stdout function do not carry string to new-line
+
+sys.stdout.write('Введите строку: ')
+s = input()
+print (s2w(s))
+
+
+
 
 # в общем, это почти то же самое, что def split2words, но ты пошел дальше и сделал функцию, я еще далек от изящности кода
 # вот ниже нашел код разбиения слов на слоги, так, для заметки
