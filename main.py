@@ -10,7 +10,7 @@ def s2w (input_string):
 
 # Sentence splitting demo with function "s2w"
 
-sentence = "Мы - любим кодить...очень: наприпер 'для примера',как типа этого"
+sentence = u"Мы - любим кодить...очень: наприпер 'для примера',как типа этого"
 wordsArray = s2w(sentence)
 
 for i in wordsArray:
@@ -20,7 +20,7 @@ for i in wordsArray:
 # Request to enter sentence to split and write to list
 # stdout function do not carry string to new-line
 
-sys.stdout.write('Введите строку: ')
+sys.stdout.write(u'Введите строку: ')
 s = input()
 print (s2w(s))
 
