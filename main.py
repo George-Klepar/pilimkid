@@ -15,7 +15,9 @@ wordsArray = s2w(sentence)
 
 for i in wordsArray:
     print(i)
-
+    
+for i in wordsArray:
+    print(i)
 
 # Request to enter sentence to split and write to list
 # stdout function do not carry string to new-line
