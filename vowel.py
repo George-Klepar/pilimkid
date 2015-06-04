@@ -1,7 +1,7 @@
 __author__ = 'obir'
 # -*- coding: utf-8 -*-
 
-word = 'Юрий'
+word = 'Параллелепипед'
 vowel_set = ('а','е','ё','и','й','о','у','э','ю','я')
 vowel_set_found = []
 vowel_found_pos = []
@@ -13,6 +13,7 @@ for anyletter in word:
         if anyletter.lower() == anyvowel:
             vowel_set_found.append(anyletter)
             vowel_found_pos.append(pos)
+            break
 
 
 print (word)
