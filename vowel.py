@@ -8,7 +8,7 @@ vowel_found_pos = []
 pos = 0
 
 for anyletter in word:
-    pos = pos + 1
+    pos += 1
     for anyvowel in vowel_set:
         if anyvowel == anyletter.lower():
             vowel_set_found.append(anyletter)
