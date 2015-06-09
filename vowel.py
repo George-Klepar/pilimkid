@@ -1,7 +1,8 @@
-# -*- coding: cp1251 -*-
+# -*- coding: utf-8 -*-
+import sys
 
 def findvowels(sword):
-    vowel_set = (u'а', u'е', u'и', u'о', u'у')
+    vowel_set = (u'а', u'е', u'ё', u'и', u'о', u'у', u'э', u'ю', u'я')
     vowel_set_found = []
     vowel_found_pos = []
     pos = 0
@@ -20,5 +21,7 @@ def x_repl(slovo):
     temp_slovo = list(new_slovo)
     fvowels = findvowels(slovo)
     for i in fvowels:
-        temp_slovo[i-1] = 'i'
+        temp_slovo[i-1] = u'i'
+    for x in temp_slovo:
+        x.decode('string-escape')
     return temp_slovo

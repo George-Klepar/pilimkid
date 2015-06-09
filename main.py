@@ -1,4 +1,4 @@
-# -*- coding: cp1251 -*-
+# -*- coding: utf-8 -*-
 
 from vowel import *
 
@@ -6,5 +6,5 @@ from vowel import *
 #print (findvowels(u'Телевизор'))
 #print (findvowels(u'Городской'))
 
-print (findvowels('Confirmation'))
-print (x_repl('Confirmation'))
+print (findvowels(u'Гидроэлектростанция'))
+print (x_repl(u'Гидроэлектростанция'))
