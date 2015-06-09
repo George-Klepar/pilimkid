@@ -5,7 +5,6 @@ def findvowels(sword):
     vowel_set_found = []
     vowel_found_pos = []
     pos = 0
-    
     for anyletter in sword:
         pos += 1
         for anyvowel in vowel_set:

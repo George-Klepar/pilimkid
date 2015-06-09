@@ -3,4 +3,5 @@
 from vowel import findvowels
 
 
-print (findvowels(u'Строка'))
+print (findvowels(u'Телевизор'))
+print (findvowels(u'Городской'))
