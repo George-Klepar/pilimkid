@@ -1,7 +1,10 @@
-# -*- coding: utf-8 -*-
+# -*- coding: cp1251 -*-
 
-from vowel import findvowels
+from vowel import *
 
 
-print (findvowels(u'Телевизор'))
-print (findvowels(u'Городской'))
+#print (findvowels(u'Телевизор'))
+#print (findvowels(u'Городской'))
+
+print (findvowels('Confirmation'))
+print (x_repl('Confirmation'))
