@@ -1,31 +1,24 @@
 # -*- coding: utf-8 -*-
-import re
 
-# Sentence to separate words splitting function
-def s2w (input_string):
-    ret = re.sub('\W',' ', input_string).split()
-    return ret
+word = u'Параллелепипед'
+vowel_set = (u'а', u'е', u'ё', u'и', u'й', u'о', u'у', u'э', u'ю', u'я')
+vowel_set_found = []
+vowel_found_pos = []
+pos = 0
 
-
-#words to syllables block
-
-vowels = set(u'аеёиоуыэюя')
-sign_chars = set(u'ъь')
-pattern_str = u"(c*[ьъ]?vc+[ьъ](?=v))|(c*[ьъ]?v(?=v|cv))|(c*[ьъ]?vc[ъь]?(?=cv|ccv))|(c*[ьъ]?v[cьъ]*(?=$))"
-pattern = re.compile(pattern_str)
-
-def get_syllables(word):
-  mask = ''.join(['v' if c in vowels else c if c in sign_chars else 'c' for c in word.lower()])
-  return [word[m.start():m.end()] for m in pattern.finditer(mask)]
+for anyletter in word:
+    pos += 1
+    for anyvowel in vowel_set:
+        if anyvowel == anyletter.lower():
+            vowel_set_found.append(anyletter)
+            vowel_found_pos.append(pos)
+            break
 
 
-# Sentence splitting demo with function "s2w"
+print(word)
 
-print(u'Введите строку: ',end="")
-sentence = input()
-wordsArray = s2w(sentence)
+print(vowel_set_found)
+print(vowel_found_pos)
 
-# Print result
-
-for i in wordsArray:
-    print ('-'.join(get_syllables(i))+" ",end="")
+print("Length: ",)
+print(len(vowel_set_found))
