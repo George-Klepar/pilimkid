@@ -61,5 +61,8 @@ def azirivka(slovo):
         temp_slovo[fvowels[1]-1] = I
         if (checkifvowel(slovo[len(slovo)-1]) == False):
             temp_slovo[fvowels[2]-1] = I
+        if (temp_slovo[fvowels[1]-2] == X) or (temp_slovo[fvowels[2]-2] == X):
+            temp_slovo.pop(fvowels[1]-2)
+            temp_slovo.pop(fvowels[2]-2)
 
     return listtostring(temp_slovo)
