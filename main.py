@@ -3,5 +3,5 @@
 from vowel import *
 
 
-print (findvowels('Гидроэлектростанция'))
-print (x_repl('Гидроэлектростанция'))
+a = str(input())
+print (azirivka(a))

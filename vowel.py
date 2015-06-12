@@ -1,6 +1,8 @@
-vowel_set = ('а', 'е', 'ё', 'и', 'о', 'у', 'э', 'ю', 'я')
+vowel_set = ('а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я')
 I = 'i'
 
+#Возврат списка позиций гласных в слове. Может вернуть так же список самих гласных vowel_set_found
+#и количество гласных len(vowel_set_found)
 def findvowels(sword):
     vowel_set_found = []
     vowel_found_pos = []
@@ -15,7 +17,7 @@ def findvowels(sword):
     return vowel_found_pos
 
 
-#меняет все гласные на i
+#меняет все гласные на i. Тестовая функция
 def x_repl(slovo):
     new_slovo=slovo
     temp_slovo = list(new_slovo)
@@ -24,7 +26,7 @@ def x_repl(slovo):
         temp_slovo[i-1] = u'i'
     return temp_slovo
 
-#Проверка, гласная ли буква
+#Проверка на гласность буквы
 def checkifvowel(letter):
     result = False
     for element in vowel_set:
@@ -32,7 +34,7 @@ def checkifvowel(letter):
             result = True
     return result
 
-#Объединяет элементы списка в строку
+#Объединяет элементы списка в строку list - > string
 def listtostring(input_list):
     result = ''.join(input_list)
     return result
@@ -42,14 +44,22 @@ def azirivka(slovo):
     temp_slovo = list(slovo)
     fvowels = findvowels(slovo)
 
-    #тут начинаются правила
-    if len(fvowels)==2 and (checkifvowel(slovo[len(slovo)-1])==True):
+    #если 2 слога и последняя гласная, меняем первую гласную
+    if (len(fvowels) == 2) and (checkifvowel(slovo[len(slovo)-1]) == True):
         temp_slovo[fvowels[0]-1] = I
 
-    if len(fvowels)==1:
-        temp_slovo[fvowels[0]-1] = I
-
-    if len(fvowels) == 2 and (checkifvowel(slovo[len(slovo)-1])==False):
+    # Если два слова и последняя согласная, меняем вторную гласную
+    if (len(fvowels) == 2) and (checkifvowel(slovo[len(slovo)-1]) == False):
         temp_slovo[fvowels[1]-1] = I
+
+    #если один слог
+    if (len(fvowels) == 1):
+        temp_slovo[fvowels[0]-1] = I
+
+    #если третий слог, меняем 2-ую + если посл.согласная меняем 3-юю
+    if (len(fvowels) == 3):
+        temp_slovo[fvowels[1]-1] = I
+        if (checkifvowel(slovo[len(slovo)-1]) == False):
+            temp_slovo[fvowels[2]-1] = I
 
     return listtostring(temp_slovo)
