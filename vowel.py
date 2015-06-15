@@ -1,5 +1,6 @@
 vowel_set = ('а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я')
 I = 'i'
+X = 'ь'
 
 #Возврат списка позиций гласных в слове. Может вернуть так же список самих гласных vowel_set_found
 #и количество гласных len(vowel_set_found)
@@ -63,6 +64,5 @@ def azirivka(slovo):
             temp_slovo[fvowels[2]-1] = I
         if (temp_slovo[fvowels[1]-2] == X) or (temp_slovo[fvowels[2]-2] == X):
             temp_slovo.pop(fvowels[1]-2)
-            temp_slovo.pop(fvowels[2]-2)
 
     return listtostring(temp_slovo)
