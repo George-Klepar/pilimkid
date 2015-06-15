@@ -1,3 +1,5 @@
+import re
+
 vowel_set = ('а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я')
 I = 'i'
 X = 'ь'
@@ -17,6 +19,13 @@ def findvowels(sword):
                 break
     return vowel_found_pos
 
+def str2word (sentence):
+    spl = re.split('\W+', sentence)
+    spl2 = []
+    for anyword in spl:
+        spl2.append(azirivka(anyword))
+    spl3 = " ".join(spl2)
+    return spl3
 
 #меняет все гласные на i. Тестовая функция
 def x_repl(slovo):
