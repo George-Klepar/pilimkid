@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 import re
 
@@ -29,14 +28,17 @@ def str2word (sentence):
     spl3 = " ".join(spl2)
     return spl3
 
+'''
 #меняет все гласные на i. Тестовая функция
 def x_repl(slovo):
     new_slovo=slovo
     temp_slovo = list(new_slovo)
     fvowels = findvowels(slovo)
     for i in fvowels:
-        temp_slovo[i-1] = u'i'
+        temp_slovo[i-1] = 'i'
     return temp_slovo
+'''
+
 
 #Проверка на гласность буквы
 def checkifvowel(letter):
@@ -51,10 +53,13 @@ def listtostring(input_list):
     result = ''.join(input_list)
     return result
 
-
 def azirivka(slovo):
     temp_slovo = list(slovo)
     fvowels = findvowels(slovo)
+
+    #если один слог
+    if (len(fvowels) == 1) and (len(temp_slovo)>2) and (checkifvowel(slovo[len(slovo)-1]) == False):
+        temp_slovo[fvowels[0]-1] = I
 
     #если 2 слога и последняя гласная, меняем первую гласную
     if (len(fvowels) == 2) and (checkifvowel(slovo[len(slovo)-1]) == True):
@@ -64,24 +69,18 @@ def azirivka(slovo):
     if (len(fvowels) == 2) and (checkifvowel(slovo[len(slovo)-1]) == False):
         temp_slovo[fvowels[1]-1] = I
 
-    #если один слог
-    if (len(fvowels) == 1) and (len(temp_slovo)>2):
-        temp_slovo[fvowels[0]-1] = I
-    elif (len(temp_slovo) <= 2):
-        print (slovo)
-
     #если третий слог, меняем 2-ую + если посл.согласная меняем 3-юю
     if (len(fvowels) == 3):
         temp_slovo[fvowels[1]-1] = I
         if (checkifvowel(slovo[len(slovo)-1]) == False):
             temp_slovo[fvowels[2]-1] = I
-        if (temp_slovo[fvowels[1]-2] == X) or (temp_slovo[fvowels[2]-2] == X):
+        if (temp_slovo[fvowels[1]-2] == X):
             temp_slovo.pop(fvowels[1]-2)
-            
+
     if (len(fvowels) == 4):
         temp_slovo[fvowels[2]-1] = I
         temp_slovo[fvowels[1]-1] = I
-        
+
     if (len(fvowels) == 5):
         temp_slovo[fvowels[3]-1] = I
         temp_slovo[fvowels[2]-1] = I
@@ -92,5 +91,10 @@ def azirivka(slovo):
         temp_slovo[fvowels[3]-1] = I
         temp_slovo[fvowels[2]-1] = I
         temp_slovo[fvowels[1]-1] = I
-        
+
     return listtostring(temp_slovo)
+
+
+# Для теста. Убрать комментарии
+#a = str(input())
+#print (str2word(a))
