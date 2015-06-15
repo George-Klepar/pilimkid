@@ -63,8 +63,10 @@ def azirivka(slovo):
         temp_slovo[fvowels[1]-1] = I
 
     #если один слог
-    if (len(fvowels) == 1):
+    if (len(fvowels) == 1) and (len(temp_slovo)>2):
         temp_slovo[fvowels[0]-1] = I
+    elif (len(temp_slovo) <= 2):
+        print (slovo)
 
     #если третий слог, меняем 2-ую + если посл.согласная меняем 3-юю
     if (len(fvowels) == 3):
@@ -73,5 +75,20 @@ def azirivka(slovo):
             temp_slovo[fvowels[2]-1] = I
         if (temp_slovo[fvowels[1]-2] == X) or (temp_slovo[fvowels[2]-2] == X):
             temp_slovo.pop(fvowels[1]-2)
+            
+    if (len(fvowels) == 4):
+        temp_slovo[fvowels[2]-1] = I
+        temp_slovo[fvowels[1]-1] = I
+        
+    if (len(fvowels) == 5):
+        temp_slovo[fvowels[3]-1] = I
+        temp_slovo[fvowels[2]-1] = I
+        temp_slovo[fvowels[1]-1] = I
 
+    if (len(fvowels) == 6):
+        temp_slovo[fvowels[4]-1] = I
+        temp_slovo[fvowels[3]-1] = I
+        temp_slovo[fvowels[2]-1] = I
+        temp_slovo[fvowels[1]-1] = I
+        
     return listtostring(temp_slovo)
