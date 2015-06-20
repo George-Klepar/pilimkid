@@ -11,7 +11,7 @@ def cyr2lat(a):
     b = list(a)
     for x in b:
         pos = b.index(x)
-        if letdict.get(x) != None:
+        if letdict.get(x) is not None:
             b.remove(x)
             b.insert(pos, letdict.get(x))
     return ''.join(b)
