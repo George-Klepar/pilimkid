@@ -34,7 +34,7 @@ def cyr2lat(a):
                        u'Э': u'E',
                        u'Ю': u'Yu',
                        u'Я': u'Ya',}
- 
+
     lower_case_letters = {u'а': u'a',
                        u'б': u'b',
                        u'в': u'v',
