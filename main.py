@@ -6,3 +6,5 @@ a = str(input())
 #print (azirivka(a))
 
 print (str2word(a))
+
+#test comment
